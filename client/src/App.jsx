@@ -5,7 +5,10 @@ import logo from "./assets/harisumiran-logo.png";
 function App() {
   return (
     <>
-      <div id="header">
+      <div
+        id="header"
+        className="flex items-center justify-between flex-wrap p-4"
+      >
         <img id="logo-image" src={logo} />
         <Links />
       </div>
