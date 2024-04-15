@@ -11,12 +11,14 @@ export default function Ttiming() {
   }
   return (
     <div className="ttiming w-1/4 bg-secondary mx-3 p-4 rounded-lg text-center">
-      <h2>Thaal Timing</h2>
-      <h3>Darshan will be closed during thaal</h3>
+      <h3 className="p-1 font-semibold bg-title text-white rounded-md">
+        Thaal Timing
+      </h3>
+      <h3 className="my-3 text-red-700">Darshan will be closed during thaal</h3>
       {ttiming.map((time) => {
         return (
-          <div key={time.id}>
-            <p>{time.title}</p>
+          <div key={time.id} className="py-3">
+            <p className="capitalize">{time.title}</p>
             <p>{time.day}</p>
           </div>
         );
