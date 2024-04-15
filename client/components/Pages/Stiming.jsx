@@ -11,11 +11,13 @@ export default function Stiming() {
   }
   return (
     <div className="stiming w-1/4 bg-secondary mx-3 p-4 rounded-lg text-center">
-      <h2>Sabha Timing</h2>
+      <h3 className="p-1 font-semibold bg-title text-white rounded-md">
+        Sabha Timing
+      </h3>
       {stiming.map((time) => {
         return (
-          <div key={time.id}>
-            <p>{time.title}</p>
+          <div key={time.id} className="py-3">
+            <p className="capitalize">{time.title}</p>
             <p>{time.day}</p>
           </div>
         );
