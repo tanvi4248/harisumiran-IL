@@ -5,7 +5,7 @@ export default function Slider() {
   const { data: sliderData, error, isLoading } = useGetAllSlidersQuery();
   const options = {
     items: 1,
-    nav: true,
+    nav: false,
     rewind: true,
     autoplay: true,
   };
@@ -18,15 +18,24 @@ export default function Slider() {
   }
   return (
     <div className="container-fluid">
-      <OwlCarousel className="owl-carousel owl-theme" options={options}>
-        {sliderData.map((slide) => {
-          return (
-            <div key={slide.id}>
-              <img src={slide.image} alt="travel image" className="image" />
-            </div>
-          );
-        })}
-      </OwlCarousel>
+      <div className="slider-main">
+        <OwlCarousel
+          className="owl-carousel owl-theme slider mb-5"
+          options={options}
+        >
+          {sliderData.map((slide) => {
+            return (
+              <div key={slide.id}>
+                <img
+                  src={slide.image}
+                  alt="travel image"
+                  className="slide-image"
+                />
+              </div>
+            );
+          })}
+        </OwlCarousel>
+      </div>
     </div>
   );
 }
