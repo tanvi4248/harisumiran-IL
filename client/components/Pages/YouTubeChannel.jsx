@@ -16,7 +16,7 @@ const YouTubeChannel = ({ channelId }) => {
     const fetchVideos = async () => {
       try {
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=10&order=date&type=video&key=AIzaSyBV94yPCnlrDAeh_7CQCrS2QuqvihmA_Nc`
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=5&order=date&type=video&key=AIzaSyBV94yPCnlrDAeh_7CQCrS2QuqvihmA_Nc`
         );
         setVideos(response.data.items);
       } catch (error) {
@@ -28,16 +28,18 @@ const YouTubeChannel = ({ channelId }) => {
   }, [channelId]);
 
   return (
-    <div>
-      <h1>Recent Events</h1>
-      <OwlCarousel className="owl-carousel owl-theme" options={options}>
-        {videos.map((video) => (
-          <div key={video.id.videoId}>
-            <YouTube videoId={video.id.videoId} />
-            <h2>{video.snippet.title}</h2>
-          </div>
-        ))}
-      </OwlCarousel>
+    <div className="latest-post-main">
+      <h1 className="text-bold">Recent Events</h1>
+      <div className="latest-post -mx-3">
+        <OwlCarousel className="owl-carousel owl-theme" options={options}>
+          {videos.map((video) => (
+            <div key={video.id.videoId} className="p-3">
+              <YouTube videoId={video.id.videoId} className="video" />
+              <p className="pt-2 text-base">{video.snippet.title}</p>
+            </div>
+          ))}
+        </OwlCarousel>
+      </div>
     </div>
   );
 };
