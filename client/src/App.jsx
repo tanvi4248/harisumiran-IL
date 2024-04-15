@@ -7,7 +7,7 @@ function App() {
     <>
       <div
         id="header"
-        className="flex items-center justify-between flex-wrap p-4"
+        className="flex items-center justify-between flex-wrap py-4"
       >
         <img id="logo-image" src={logo} />
         <Links />
