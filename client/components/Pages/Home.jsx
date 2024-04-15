@@ -7,11 +7,11 @@ import Atiming from "./Atiming";
 import Ttiming from "./Ttiming";
 import Stiming from "./Stiming";
 import Address from "./Address";
+import Footerbottom from "../Footer/Footerbottom";
 export default function Home() {
   return (
     <div>
       <Slider></Slider>
-      <Address></Address>
       <div className="timing-main flex justify-center -mx-3">
         <Timing></Timing>
         <Atiming></Atiming>
@@ -19,6 +19,8 @@ export default function Home() {
         <Stiming></Stiming>
       </div>
       <YouTubeChannel channelId="UCizha79cD_LOFJoZbREl0Gg" />
+      <Address></Address>
+      <Footerbottom></Footerbottom>
     </div>
   );
 }
