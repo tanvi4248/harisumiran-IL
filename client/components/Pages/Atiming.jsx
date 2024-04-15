@@ -11,11 +11,13 @@ export default function Timing() {
   }
   return (
     <div className="atiming w-1/4 bg-secondary mx-3 p-4 rounded-lg text-center">
-      <h2>Aarti Timing</h2>
+      <h3 className="p-1 font-semibold bg-title text-white rounded-md">
+        Aarti Timing
+      </h3>
       {atiming.map((time) => {
         return (
-          <div key={time.id}>
-            <p>{time.title}</p>
+          <div key={time.id} className="py-3">
+            <p className="capitalize">{time.title}</p>
             <p>{time.day}</p>
           </div>
         );
