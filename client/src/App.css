@@ -1,0 +1,18 @@
+iframe {
+  width: 100%;
+}
+.video {
+  height: 350px;
+}
+#nav-links a:last-child {
+  margin: 0;
+}
+.slider .owl-dots {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.owl-theme.slider .owl-dots .owl-dot span {
+  background: black;
+}
