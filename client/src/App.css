@@ -1,8 +1,8 @@
 iframe {
   width: 100%;
 }
-.video {
-  height: 350px;
+.main-container .container {
+  max-width: 1170px;
 }
 #nav-links a:last-child {
   margin: 0;

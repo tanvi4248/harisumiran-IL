@@ -6,7 +6,7 @@ export const harisumiranApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:8080/api",
   }),
-  tagTypes: ["Sliders", "Timing"],
+  tagTypes: ["Sliders", "Timing", "Events"],
   endpoints: (builder) => ({
     getAllSliders: builder.query({
       query: () => "/sliders",
@@ -28,6 +28,10 @@ export const harisumiranApi = createApi({
       query: () => "/timing/stiming",
       providesTags: ["Timing"],
     }),
+    getEvents: builder.query({
+      query: () => "/events",
+      providesTags: ["Events"],
+    }),
   }),
 });
 
@@ -37,4 +41,5 @@ export const {
   useGetAllAtimingsQuery,
   useGetAllTtimingsQuery,
   useGetAllStimingsQuery,
+  useGetEventsQuery,
 } = harisumiranApi;

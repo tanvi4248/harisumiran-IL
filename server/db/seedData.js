@@ -59,4 +59,5 @@ const stimings = [
     day: "Sunday, 10:30 AM - 12:30 PM",
   },
 ];
+
 module.exports = { sliders, dtimings, atimings, ttimings, stimings };

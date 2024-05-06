@@ -23,6 +23,7 @@ const dropTables = async () => {
       DROP TABLE IF EXISTS atimings CASCADE;
       DROP TABLE IF EXISTS ttimings CASCADE;
       DROP TABLE IF EXISTS stimings CASCADE;
+      DROP TABLE IF EXISTS events CASCADE;
       `);
     console.log("Table Dropped!");
   } catch (error) {
@@ -58,6 +59,14 @@ const createTable = async () => {
         title TEXT NOT NULL,
         day TEXT NOT NULL
       );
+      CREATE TABLE events (
+        id SERIAL PRIMARY KEY,
+        title VARCHAR(255) NOT NULL,
+        date DATE NOT NULL,
+        time_start TIME NOT NULL,
+        time_end TIME NOT NULL,
+        image_url VARCHAR(255)
+    );
       `);
     console.log("Tables Created!");
   } catch (error) {
@@ -117,6 +126,17 @@ const createInitialStimings = async () => {
     throw error;
   }
 };
+const createInitialEvents = async () => {
+  try {
+    await client.query(`
+    INSERT INTO events (title, date, time_start, time_end, image_url)
+    VALUES
+        ('Hariaagman Din', '4/21/2024', '10:00:00 AM','12:00:00 PM','../src/assets/event.jpg')`);
+    console.log("created events");
+  } catch (error) {
+    throw error;
+  }
+};
 const buildDb = async () => {
   try {
     client.connect();
@@ -127,6 +147,7 @@ const buildDb = async () => {
     await createInitialAtimings();
     await createInitialTtimings();
     await createInitialStimings();
+    await createInitialEvents();
   } catch (error) {
     console.error(error);
   } finally {

@@ -3,26 +3,35 @@ import { Link } from "react-router-dom";
 export default function Links() {
   return (
     <div id="nav-links">
-      <Link to="/" className="block mt-4 lg:inline-block lg:mt-0 mr-4">
-        Home
-      </Link>
-      <Link to="/about-us" className="block mt-4 lg:inline-block lg:mt-0 mr-4">
+      <Link
+        to="/about-us"
+        className="block mt-4 lg:inline-block lg:mt-0 mr-4 font-medium text-secondary"
+      >
         About us
       </Link>
-      <Link to="/events" className="block mt-4 lg:inline-block lg:mt-0 mr-4">
+      <Link
+        to="/events"
+        className="block mt-4 lg:inline-block lg:mt-0 mr-4 font-medium text-secondary"
+      >
         Events
       </Link>
       <Link
-        to="/thakorji-darshan"
-        className="block mt-4 lg:inline-block lg:mt-0 mr-4"
+        to="/gallery"
+        className="block mt-4 lg:inline-block lg:mt-0 mr-4 font-medium text-secondary"
       >
-        Thakorji Darshan
+        Gallery
       </Link>
-      <Link to="/donate" className="block mt-4 lg:inline-block lg:mt-0 mr-4">
+      <Link
+        to="/donate"
+        className="block mt-4 lg:inline-block lg:mt-0 mr-4 font-medium text-secondary"
+      >
         Donate
       </Link>
-      <Link to="/contact" className="block mt-4 lg:inline-block lg:mt-0 mr-4">
-        Contact
+      <Link
+        to="/contact"
+        className="block mt-4 lg:inline-block lg:mt-0 mr-4 font-medium text-secondary"
+      >
+        Contact Us
       </Link>
     </div>
   );

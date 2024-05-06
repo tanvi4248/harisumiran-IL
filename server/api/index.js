@@ -7,5 +7,6 @@ router.get("/", function (req, res, next) {
 
 router.use("/sliders", require("./sliders"));
 router.use("/timing", require("./timing"));
+router.use("/events", require("./events"));
 
 module.exports = router;
