@@ -8,6 +8,7 @@ export default function Slider() {
     nav: false,
     rewind: true,
     autoplay: true,
+    loop: true,
   };
   if (isLoading) {
     return <div>Loading...</div>;
@@ -20,7 +21,7 @@ export default function Slider() {
     <div className="container-fluid">
       <div className="slider-main">
         <OwlCarousel
-          className="owl-carousel owl-theme slider mb-5"
+          className="owl-carousel owl-theme slider"
           options={options}
         >
           {sliderData.map((slide) => {

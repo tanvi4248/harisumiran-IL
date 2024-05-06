@@ -17,8 +17,8 @@ export default function Timing() {
       {timing.map((time) => {
         return (
           <div key={time.id} className="py-3">
-            <p className="capitalize">{time.title}</p>
-            <p>{time.day}</p>
+            <p className="capitalize text-secondary">{time.title}</p>
+            <p className="text-primary">{time.day}</p>
           </div>
         );
       })}
