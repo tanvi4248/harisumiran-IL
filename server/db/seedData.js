@@ -1,12 +1,12 @@
 const sliders = [
   {
-    image: "../src/assets/slider/slider-01.jpg",
+    image: "/slider/slider-01.jpg",
   },
   {
-    image: "../src/assets/slider/slider-02.jpg",
+    image: "/slider/slider-02.jpg",
   },
   {
-    image: "../src/assets/slider/slider-03.jpg",
+    image: "/slider/slider-03.jpg",
   },
 ];
 
