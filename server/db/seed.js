@@ -131,7 +131,7 @@ const createInitialEvents = async () => {
     await client.query(`
     INSERT INTO events (title, date, time_start, time_end, image_url)
     VALUES
-        ('Hariaagman Din', '4/21/2024', '10:00:00 AM','12:00:00 PM','../src/assets/event.jpg')`);
+        ('Hari Pragatya Din', '5/18/2024', '05:00:00 AM','07:00:00 PM','/event-02.jpg')`);
     console.log("created events");
   } catch (error) {
     throw error;
