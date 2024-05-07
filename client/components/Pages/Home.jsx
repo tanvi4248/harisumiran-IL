@@ -1,6 +1,6 @@
-import "react-owl-carousel2/src/owl.carousel.css";
-import "react-owl-carousel2/src/owl.theme.default.css";
-import Slider from "./Slider";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import ImageSlider from "./ImageSlider";
 import YouTubeChannel from "./YouTubeChannel";
 import Timing from "./Timing";
 import Atiming from "./Atiming";
@@ -12,7 +12,7 @@ import UpcomingEvents from "./UpcomingEvents";
 export default function Home() {
   return (
     <div>
-      <Slider></Slider>
+      <ImageSlider></ImageSlider>
       <Banner></Banner>
       <div className="container">
         <UpcomingEvents></UpcomingEvents>

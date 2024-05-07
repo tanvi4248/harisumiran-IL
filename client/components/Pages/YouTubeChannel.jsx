@@ -1,18 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import YouTube from "react-youtube";
-import OwlCarousel from "react-owl-carousel2";
+import Slider from "react-slick";
 
 // eslint-disable-next-line react/prop-types
 const YouTubeChannel = ({ channelId }) => {
   const [videos, setVideos] = useState([]);
-  const options = {
-    items: 3,
-    nav: false,
-    rewind: true,
-    autoplay: true,
-    loop: true,
-  };
+
   useEffect(() => {
     const fetchVideos = async () => {
       try {
@@ -28,13 +22,39 @@ const YouTubeChannel = ({ channelId }) => {
     fetchVideos();
   }, [channelId]);
 
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="latest-post-main">
       <h1 className="font-['Playfair_Display'] text-title mb-3">
         Recent Events
       </h1>
       <div className="latest-post -mx-3">
-        <OwlCarousel className="owl-carousel owl-theme" options={options}>
+        <Slider {...sliderSettings}>
           {videos.map((video) => (
             <div key={video.id.videoId} className="px-3">
               <YouTube
@@ -47,7 +67,7 @@ const YouTubeChannel = ({ channelId }) => {
               </p>
             </div>
           ))}
-        </OwlCarousel>
+        </Slider>
       </div>
     </div>
   );
