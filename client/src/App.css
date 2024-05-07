@@ -7,12 +7,10 @@ iframe {
 #nav-links a:last-child {
   margin: 0;
 }
-.slider .owl-dots {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.slider-main {
+  position: relative;
+  overflow: hidden;
 }
-.owl-theme.slider .owl-dots .owl-dot span {
-  background: black;
+.slider-main .slick-dots {
+  bottom: 10px;
 }
