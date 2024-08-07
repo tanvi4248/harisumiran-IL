@@ -1,6 +1,7 @@
 import { useGetEventsQuery } from "../../api/harisumiranApi";
 function UpcomingEvents() {
   const { data: events, error, isLoading } = useGetEventsQuery();
+  console.log(events);
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -40,41 +41,48 @@ function UpcomingEvents() {
   };
   return (
     <div className="events mb-8">
-      <h1 className="font-['Playfair_Display'] text-title mb-3">
+      <h1 className="font-['Playfair_Display'] text-title mb-3 title">
         Upcoming Events
       </h1>
       <ul className="overflow-hidden rounded-lg">
-        {events.map((event) => (
-          <li key={event.id} className="flex bg-white items-center">
-            {event.image_url && (
-              <div className="event-left w-1/4">
-                <a
-                  href={event.image_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={event.image_url}
-                    alt={event.title}
-                    style={{ maxWidth: "100%" }}
-                  />
-                </a>
-              </div>
-            )}
-            <div className="event-right w-3/4 flex flex-col pl-20 relative">
-              <h2 className="font-bold">{event.title}</h2>
-              <div className="absolute bottom-0 top-0 m-auto -left-10 h-20 w-20 bg-primary text-primary rounded-full items-center flex flex-col justify-center">
-                <div className="font-bold text-xl">
-                  {formatDate(event.date).day}
+        {events == "undefined" ? (
+          <div>
+            {events.map((event) => (
+              <li key={event.id} className="flex bg-white items-center">
+                {event.image_url && (
+                  <div className="event-left w-1/4">
+                    <a
+                      href={event.image_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={event.image_url}
+                        alt={event.title}
+                        style={{ maxWidth: "100%" }}
+                      />
+                    </a>
+                  </div>
+                )}
+                <div className="event-right w-3/4 flex flex-col pl-20 relative">
+                  <h2 className="font-bold">{event.title}</h2>
+                  <div className="absolute bottom-0 top-0 m-auto -left-10 h-20 w-20 bg-primary text-primary rounded-full items-center flex flex-col justify-center">
+                    <div className="font-bold text-xl">
+                      {formatDate(event.date).day}
+                    </div>
+                    <div>{formatDate(event.date).monthName}</div>
+                  </div>
+                  <p>
+                    {formatTime(event.time_start)} -{" "}
+                    {formatTime(event.time_end)}
+                  </p>
                 </div>
-                <div>{formatDate(event.date).monthName}</div>
-              </div>
-              <p>
-                {formatTime(event.time_start)} - {formatTime(event.time_end)}
-              </p>
-            </div>
-          </li>
-        ))}
+              </li>
+            ))}
+          </div>
+        ) : (
+          <p>No upcoming events</p>
+        )}
       </ul>
     </div>
   );

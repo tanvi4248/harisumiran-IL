@@ -14,3 +14,18 @@ iframe {
 .slider-main .slick-dots {
   bottom: 10px;
 }
+.pattern::after {
+  content: "";
+  background-image: url("../public/pattern.png");
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.title::after {
+  content: "";
+  height: 2px;
+  width: 100px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

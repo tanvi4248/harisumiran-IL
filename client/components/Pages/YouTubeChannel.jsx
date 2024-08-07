@@ -49,7 +49,7 @@ const YouTubeChannel = ({ channelId }) => {
   };
 
   return (
-    <div className="latest-post-main">
+    <div className="latest-post-main pb-8">
       <h1 className="font-['Playfair_Display'] text-title mb-3">
         Recent Events
       </h1>

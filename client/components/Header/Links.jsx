@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Links() {
   return (
-    <div id="nav-links">
+    <div id="nav-links" className="ml-8">
       <Link
         to="/about-us"
         className="block mt-4 lg:inline-block lg:mt-0 mr-4 font-medium text-secondary"
@@ -21,12 +21,7 @@ export default function Links() {
       >
         Gallery
       </Link>
-      <Link
-        to="/donate"
-        className="block mt-4 lg:inline-block lg:mt-0 mr-4 font-medium text-secondary"
-      >
-        Donate
-      </Link>
+
       <Link
         to="/contact"
         className="block mt-4 lg:inline-block lg:mt-0 mr-4 font-medium text-secondary"

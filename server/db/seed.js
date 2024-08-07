@@ -24,6 +24,7 @@ const dropTables = async () => {
       DROP TABLE IF EXISTS ttimings CASCADE;
       DROP TABLE IF EXISTS stimings CASCADE;
       DROP TABLE IF EXISTS events CASCADE;
+      DROP TABLE IF EXISTS contacts CASCADE;
       `);
     console.log("Table Dropped!");
   } catch (error) {
@@ -67,6 +68,14 @@ const createTable = async () => {
         time_end TIME NOT NULL,
         image_url VARCHAR(255)
     );
+    CREATE TABLE contacts (
+      id SERIAL PRIMARY KEY,
+      firstname VARCHAR(255) NOT NULL,
+      lastname VARCHAR(255) NOT NULL,
+      email VARCHAR(255) NOT NULL,
+      subject VARCHAR(255) NOT NULL,
+      message VARCHAR(255) NOT NULL
+  );
       `);
     console.log("Tables Created!");
   } catch (error) {
@@ -137,6 +146,17 @@ const createInitialEvents = async () => {
     throw error;
   }
 };
+const createInitialContacts = async () => {
+  try {
+    await client.query(`
+    INSERT INTO contacts (firstname, lastname, email, subject, message)
+    VALUES
+        ('abc', 'xyz', 'abc@gmail.com','abcxyz','hello there!')`);
+    console.log("created contacts");
+  } catch (error) {
+    throw error;
+  }
+};
 const buildDb = async () => {
   try {
     client.connect();
@@ -148,6 +168,7 @@ const buildDb = async () => {
     await createInitialTtimings();
     await createInitialStimings();
     await createInitialEvents();
+    await createInitialContacts();
   } catch (error) {
     console.error(error);
   } finally {

@@ -12,12 +12,14 @@ export default function Address() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-        <div className="address">
-          <LocationOnIcon></LocationOnIcon>
-          1670 Checker Rd, Long Grove, IL 60047
-        </div>
-        <div className="phone">
-          <SmartphoneIcon></SmartphoneIcon> (224) 339-9360
+        <div className="add-phone mt-10">
+          <div className="address">
+            <LocationOnIcon></LocationOnIcon>
+            1670 Checker Rd, Long Grove, IL 60047
+          </div>
+          <div className="phone">
+            <SmartphoneIcon></SmartphoneIcon> (224) 339-9360
+          </div>
         </div>
       </div>
     </div>

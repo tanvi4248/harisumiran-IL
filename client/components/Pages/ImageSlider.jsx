@@ -29,7 +29,6 @@ export default function ImageSlider() {
                 src={slide.image}
                 alt="travel image"
                 className="slide-image"
-                style={{ width: "100%" }} // Ensure the image takes up full width
               />
             </div>
           ))}

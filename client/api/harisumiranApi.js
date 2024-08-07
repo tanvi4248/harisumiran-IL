@@ -32,6 +32,13 @@ export const harisumiranApi = createApi({
       query: () => "/events",
       providesTags: ["Events"],
     }),
+    contacts: builder.mutation({
+      query: ({ firstname, lastname, email, subject, message }) => ({
+        url: "/contacts/send-email",
+        method: "POST",
+        body: { firstname, lastname, email, subject, message },
+      }),
+    }),
   }),
 });
 
@@ -42,4 +49,5 @@ export const {
   useGetAllTtimingsQuery,
   useGetAllStimingsQuery,
   useGetEventsQuery,
+  useContactsMutation,
 } = harisumiranApi;

@@ -9,6 +9,7 @@ import Stiming from "./Stiming";
 import Footerbottom from "../Footer/Footerbottom";
 import Banner from "./Banner";
 import UpcomingEvents from "./UpcomingEvents";
+import Founder from "./Founder";
 export default function Home() {
   return (
     <div>
@@ -22,6 +23,7 @@ export default function Home() {
           <Ttiming></Ttiming>
           <Stiming></Stiming>
         </div>
+        <Founder></Founder>
         <YouTubeChannel channelId="UCizha79cD_LOFJoZbREl0Gg" />
       </div>
       <Footerbottom></Footerbottom>

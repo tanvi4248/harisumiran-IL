@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const PORT = 8080;
-
+require("dotenv").config();
 const morgan = require("morgan");
 app.use(morgan("dev"));
 app.use(express.json());
