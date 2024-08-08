@@ -40,8 +40,8 @@ app.get("/payment", async (req, res) => {
         payment_method: "paypal",
       },
       redirect_urls: {
-        return_url: "http://localhost:8080/success",
-        cancel_url: "http://localhost:8080/failed",
+        return_url: "https://harisumiran-il.onrender.com/success",
+        cancel_url: "https://harisumiran-il.onrender.com/failed",
       },
       transactions: [
         {
@@ -103,7 +103,7 @@ app.get("/success", async (req, res) => {
       function (error, payment) {
         if (error) {
           console.log(error);
-          return res.redirect("http://localhost:5173/failed");
+          return res.redirect("https://harisumiran-il-1.onrender.com/failed");
         } else {
           console.log("Execute Payment Response");
           // console.log(payment);
@@ -114,7 +114,7 @@ app.get("/success", async (req, res) => {
 
           console.log("transactions", transactions);
 
-          return res.redirect("http://localhost:5173/success");
+          return res.redirect("https://harisumiran-il-1.onrender.com/success");
         }
       }
     );
@@ -124,7 +124,7 @@ app.get("/success", async (req, res) => {
 });
 
 app.get("/failed", async (req, res) => {
-  return res.redirect("http://localhost:5173/failed");
+  return res.redirect("https://harisumiran-il-1.onrender.com/failed");
 });
 app.use("/api", require("./api"));
 

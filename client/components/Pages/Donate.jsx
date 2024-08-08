@@ -6,6 +6,9 @@ export default function Donate() {
     e.preventDefault();
     let res = await axios.post("https://harisumiran-il.onrender.com/payment");
     console.log(res);
+    // if(res && res.data){
+    //   let link = res.data.links[1].href
+    // }
   };
   return (
     <>
