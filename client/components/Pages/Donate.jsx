@@ -1,6 +1,12 @@
 import Footerbottom from "../Footer/Footerbottom";
+import axios from "axios";
 
 export default function Donate() {
+  const HandleSubmit = async (e) => {
+    e.preventDefault();
+    let res = await axios.post("https://harisumiran-il.onrender.com/payment");
+    console.log(res);
+  };
   return (
     <>
       <div className="font-['Playfair_Display'] font-bold text-5xl p-9 bg-title text-white mb-9">
@@ -184,6 +190,7 @@ export default function Donate() {
             >
               Save
             </button>
+            <button onClick={HandleSubmit}>Donate</button>
           </div>
         </form>
       </div>

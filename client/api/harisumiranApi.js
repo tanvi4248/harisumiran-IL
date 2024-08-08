@@ -4,7 +4,7 @@ import { fetchBaseQuery } from "@reduxjs/toolkit/query";
 export const harisumiranApi = createApi({
   reducerPath: "harisumiranApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://harisumiran-il.onrender.com/api",
+    baseUrl: "http://localhost:8080/api",
   }),
   tagTypes: ["Sliders", "Timing", "Events"],
   endpoints: (builder) => ({
